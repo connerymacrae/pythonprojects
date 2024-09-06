@@ -3,8 +3,8 @@ from snake import Snake
 from screen import SnakeScreen
 import time
 
-
 my_screen = Screen()
+# my_screen = SnakeScreen()
 my_screen.bgcolor('black')
 my_screen.setup(height=600, width=600)
 my_screen.title("Snakey McSnakeface")
@@ -27,12 +27,12 @@ my_screen.onkey(snake.up, "Up")
 my_screen.onkey(snake.down, "Down")
 my_screen.onkey(snake.left, "Left")
 my_screen.onkey(snake.right, "Right")
-
-
+#
+#
 game_is_on = True
 while game_is_on:
     my_screen.update()
-    time.sleep(0.2)
+    time.sleep(0.1)
 
     snake.move()
     # for seg_num in range(len(full_snake) - 1, 0, -1):
