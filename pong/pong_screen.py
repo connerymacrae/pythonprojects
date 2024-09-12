@@ -26,5 +26,3 @@ class PongScreen(turtle.Screen):
             board_turtle.fd(20)
             board_turtle.up()
             board_turtle.fd(20)
-
-

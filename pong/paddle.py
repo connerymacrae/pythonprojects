@@ -17,7 +17,6 @@ class Paddle(Turtle):
         self.up()
         self.goto(x_coord, y_coord)
 
-
     #     self.full_paddle = []
     #     self.create_paddle()
     #

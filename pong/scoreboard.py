@@ -1,20 +1,20 @@
 from turtle import Turtle
 ALIGNMENT = 'center'
-FONT = ('Helvetica', 24, 'italic')
+FONT = ('Courier', 80, 'bold')
 
 
 class Scoreboard(Turtle):
-    def __init__(self):
+    def __init__(self, x_pos, y_pos):
         super().__init__()
         self.score = 0
         self.ht()
         self.up()
-        self.goto(0, 260)
+        self.goto(x_pos, y_pos)
         self.pencolor('white')
         self.update_scoreboard()
 
     def update_scoreboard(self):
-        self.write(f"Score:    {self.score}", align=ALIGNMENT, font=FONT)
+        self.write(self.score, align=ALIGNMENT, font=FONT)
 
     def increase_score(self):
         self.score += 1

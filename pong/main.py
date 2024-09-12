@@ -2,6 +2,7 @@ from turtle import Screen
 # from pong_screen import PongScreen
 from paddle import Paddle
 from ball import Ball
+from scoreboard import Scoreboard
 import time
 
 """
@@ -31,6 +32,8 @@ pong_screen.tracer(0)
 r_paddle = Paddle(560, 0)
 l_paddle = Paddle(-560, 0)
 ball = Ball()
+l_score = Scoreboard(-100, 300)
+r_score = Scoreboard(100, 300)
 
 pong_screen.listen()
 pong_screen.onkey(r_paddle.move_up, "Up")
@@ -42,7 +45,7 @@ pong_screen.onkey(l_paddle.move_down, "s")
 game_is_on = True
 while game_is_on:
     pong_screen.update()
-    time.sleep(0.1)
+    time.sleep(ball.move_speed)
 
     ball.move()
 
@@ -55,9 +58,11 @@ while game_is_on:
         ball.paddle_hit()
 
     if ball.xcor() > 590:
+        l_score.increase_score()
         ball.reset()
     
     if ball.xcor() < -590:
+        r_score.increase_score()
         ball.reset()
 
 
