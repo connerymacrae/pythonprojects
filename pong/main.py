@@ -1,5 +1,5 @@
 from turtle import Screen
-# from pong_screen import PongScreen
+from pong_screen import PongScreen
 from paddle import Paddle
 from ball import Ball
 from scoreboard import Scoreboard
@@ -34,6 +34,7 @@ l_paddle = Paddle(-560, 0)
 ball = Ball()
 l_score = Scoreboard(-100, 300)
 r_score = Scoreboard(100, 300)
+net = PongScreen()
 
 pong_screen.listen()
 pong_screen.onkey(r_paddle.move_up, "Up")

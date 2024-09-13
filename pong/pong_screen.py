@@ -1,28 +1,19 @@
-import turtle
+from turtle import Turtle
 
 
-SCREENHEIGHT = 800
-SCREENWIDTH = 1200
-
-
-class PongScreen(turtle.Screen):
+class PongScreen(Turtle):
     def __init__(self):
         super().__init__()
-        self.bgcolor('black')
-        self.setup(height=SCREENHEIGHT, width=SCREENWIDTH)
-        self.title("Pongy McPongface")
-        # self.tracer(0)
-        # self.make_court()
-        # self.exitonclick()
+        self.ht()
+        self.up()
+        self.goto(0, 400)
+        self.pencolor('white')
+        self.setheading(270)
+        self.make_court()
 
     def make_court(self):
-        board_turtle = turtle.Turtle()
-        board_turtle.pencolor('white')
-        board_turtle.up()
-        board_turtle.goto(0, SCREENHEIGHT/2)
-        board_turtle.setheading(270)
-        while board_turtle.ycor() > -SCREENHEIGHT/2:
-            board_turtle.down()
-            board_turtle.fd(20)
-            board_turtle.up()
-            board_turtle.fd(20)
+        while self.ycor() > -400:
+            self.down()
+            self.fd(20)
+            self.up()
+            self.fd(20)
