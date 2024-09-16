@@ -44,6 +44,13 @@ class Snake:
         # segment.goto(tail_position_x - 20, tail_position_y)
         # self.full_snake.append(segment)
 
+    def reset(self):
+        for seg in self.full_snake:
+            seg.goto(-1500, 0)
+        self.full_snake.clear()
+        self.create_snake()
+        self.head = self.full_snake[0]
+
     def up(self):
         if self.head.heading() != DOWN:
             self.head.setheading(UP)

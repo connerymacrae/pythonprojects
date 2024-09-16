@@ -5,12 +5,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="a5869c5d-a6b4-4722-9ff5-8a2114c563c6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../pong/scoreboard.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pong/ball.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pong/ball.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pong/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pong/main.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pong/paddle.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pong/paddle.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../pong/pong_screen.py" beforeDir="false" afterPath="$PROJECT_DIR$/../pong/pong_screen.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../snake_game/highscore.txt" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_game/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_game/main.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/../snake_game/scoreboard.py" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_game/scoreboard.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../snake_game/snake.py" beforeDir="false" afterPath="$PROJECT_DIR$/../snake_game/snake.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -35,22 +33,22 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "Python.main.executor": "Run",
-    "Python.scoreboard.executor": "Run",
-    "Python.snake.executor": "Run",
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "main",
-    "node.js.detected.package.eslint": "true",
-    "node.js.detected.package.tslint": "true",
-    "node.js.selected.package.eslint": "(autodetect)",
-    "node.js.selected.package.tslint": "(autodetect)",
-    "nodejs_package_manager_path": "npm",
-    "vue.rearranger.settings.migration": "true"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;Python.main.executor&quot;: &quot;Run&quot;,
+    &quot;Python.scoreboard.executor&quot;: &quot;Run&quot;,
+    &quot;Python.snake.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;git-widget-placeholder&quot;: &quot;main&quot;,
+    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
+    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
+    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
+    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
+    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
-}]]></component>
+}</component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
@@ -68,6 +66,7 @@
       <updated>1724258103841</updated>
       <workItem from="1724258105976" duration="1301000" />
       <workItem from="1724260187395" duration="34151000" />
+      <workItem from="1726280521821" duration="2416000" />
     </task>
     <servers />
   </component>
@@ -76,8 +75,8 @@
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/snake_game$main.coverage" NAME="main Coverage Results" MODIFIED="1724260134224" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../snake_game" />
-    <SUITE FILE_PATH="coverage/sanke_game$main.coverage" NAME="main Coverage Results" MODIFIED="1726150409500" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../snake_game" />
-    <SUITE FILE_PATH="coverage/sanke_game$scoreboard.coverage" NAME="scoreboard Coverage Results" MODIFIED="1725653795301" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../snake_game" />
+    <SUITE FILE_PATH="coverage/sanke_game$main.coverage" NAME="main Coverage Results" MODIFIED="1726283405458" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../snake_game" />
+    <SUITE FILE_PATH="coverage/sanke_game$scoreboard.coverage" NAME="scoreboard Coverage Results" MODIFIED="1726283400968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../snake_game" />
     <SUITE FILE_PATH="coverage/sanke_game$snake.coverage" NAME="snake Coverage Results" MODIFIED="1726150401248" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/../snake_game" />
   </component>
 </project>
