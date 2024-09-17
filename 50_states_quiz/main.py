@@ -14,30 +14,33 @@ turtle.shape(image)
 new_turtle = turtle.Turtle()
 new_turtle.ht()
 
-answer_state = screen.textinput(title="Guess the State", prompt="What's another state's name?")
-correct_guesses = 0
 guess_list = []
 
-still_guessing = True
-while still_guessing:
-    formatted_answer_state = answer_state.title()
-    if len(guess_list) < 49:
-        if formatted_answer_state in state_list:
-            correct_guesses += 1
-            guess_list.append(formatted_answer_state)
-            correct_guess = data[data.state == formatted_answer_state]
-            x_coord = int(correct_guess['x'].iloc[0])
-            y_coord = int(correct_guess['y'].iloc[0])
-            new_turtle.teleport(x_coord, y_coord)
-            new_turtle.write(formatted_answer_state)
-            answer_state = screen.textinput(title=f"{correct_guesses}/50 States Correct",
-                                            prompt="What's another state's name?")
-        else:
-            answer_state = screen.textinput(title=f"{correct_guesses}/50 States Correct",
-                                            prompt="What's another state's name?")
-    else:
-        new_turtle.teleport(250, 0)
-        new_turtle.write(f"Congrats!\n You guessed all 50 States!", align='center',
-                         font=('Courier', 24, 'normal'))
+while len(guess_list) < 50:
+    answer_state = screen.textinput(title=f"{len(guess_list)}/50 States Correct",
+                                    prompt="What's another state's name?").title()
+    if answer_state == "Exit":
+        missed_states = []
+        for state in state_list:
+            if state not in guess_list:
+                missed_states.append(state)
+        states_to_learn = pandas.DataFrame(missed_states)
+        states_to_learn.to_csv('states_to_learn.csv')
+        break
+    if answer_state in state_list:
+        guess_list.append(answer_state)
+        correct_guess = data[data.state == answer_state]
+        x_coord = int(correct_guess['x'].iloc[0])
+        y_coord = int(correct_guess['y'].iloc[0])
+        new_turtle.teleport(x_coord, y_coord)
+        new_turtle.write(answer_state)
 
-turtle.mainloop()
+
+
+
+
+
+# new_turtle.teleport(250, 0)
+# new_turtle.write(f"Congrats!\n You guessed all 50 States!", align='center',
+#                  font=('Courier', 24, 'normal'))
+
