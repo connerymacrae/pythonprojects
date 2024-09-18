@@ -31,9 +31,9 @@ while len(guess_list) < 50:
         guess_list.append(answer_state)
         correct_guess = data[data.state == answer_state]
         x_coord = int(correct_guess['x'].iloc[0])
-        y_coord = int(correct_guess['y'].iloc[0])
+        y_coord = correct_guess.y.item()
         new_turtle.teleport(x_coord, y_coord)
-        new_turtle.write(answer_state)
+        new_turtle.write(answer_state, font=('Courier', 12, 'normal'))
 
 
 
