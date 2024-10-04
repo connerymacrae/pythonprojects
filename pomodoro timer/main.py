@@ -1,5 +1,6 @@
 from tkinter import *
 import math
+from playsound3 import playsound
 
 # ---------------------------- CONSTANTS ------------------------------- #
 PINK = "#e2979c"
@@ -12,6 +13,9 @@ SHORT_BREAK_MIN = 5
 LONG_BREAK_MIN = 20
 reps = 0
 timer = "None"
+ding_sound = "ding.mp3"
+bark_sound = "bark.mp3"
+big_bell_sound = "big_bell.mp3"
 
 
 # ---------------------------- TIMER RESET ------------------------------- #
@@ -39,14 +43,17 @@ def start_timer():
         count_down(long_break_sec)
         timer_label.config(text="BREAAAAK!", fg=PINK)
         canvas.itemconfig(canvas_img, image=doge_long_break_img)
+        playsound(big_bell_sound)
     elif reps % 2 == 0:
         count_down(short_break_sec)
         timer_label.config(text='Break', fg=YELLOW)
         canvas.itemconfig(canvas_img, image=doge_break_img)
+        playsound(bark_sound)
     else:
         count_down(work_sec)
         timer_label.config(text='work.', fg=RED)
         canvas.itemconfig(canvas_img, image=doge_img)
+        playsound(ding_sound)
 
 
 # ---------------------------- COUNTDOWN MECHANISM ------------------------------- #
