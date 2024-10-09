@@ -82,8 +82,6 @@ def find_password():
         website_input.focus()
 
 
-
-
 # ---------------------------- UI SETUP ------------------------------- #
 
 window = Tk()
