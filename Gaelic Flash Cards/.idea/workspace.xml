@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="3944fe20-9ed3-45dd-a8c0-1ebeb8c5f2b2" name="Changes" comment="flash card project complete" />
+    <list default="true" id="3944fe20-9ed3-45dd-a8c0-1ebeb8c5f2b2" name="Changes" comment="flash card project complete">
+      <change afterPath="$PROJECT_DIR$/../emailer/dateime_test.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../emailer/main.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../emailer/quotes.txt" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../emailer/quotes_test.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../Birthday Wisher/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../Birthday Wisher/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../emailer/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../emailer/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
