@@ -5,7 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b5a0a18d-18fb-47fb-9343-e7bb1f2d8a9c" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/../kanye-quotes/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../kanye-quotes/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../quizzler2.0/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../quizzler2.0/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -15,6 +15,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "connerymacrae"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/connerymacrae/pythonprojects.git",
+    "accountId": "4faa6975-757c-4ada-83e8-a8872ea404a4"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 0
 }</component>
@@ -42,7 +54,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-python-sdk-d68999036c7f-b11f5e8da5ad-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-233.14475.56" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
+        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
       </set>
     </attachedChunks>
   </component>
@@ -59,6 +72,7 @@
       <workItem from="1729013647968" duration="76000" />
       <workItem from="1729013876897" duration="3581000" />
       <workItem from="1729046181581" duration="103000" />
+      <workItem from="1729187374543" duration="2837000" />
     </task>
     <servers />
   </component>
