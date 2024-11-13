@@ -42,6 +42,7 @@ sunset_time = data['results']['sunset']
 sunrise_hour = sunrise_time.split(":")[0]
 sunset_hour = sunset_time.split("T")[1].split(":")[0]
 
+print(data["results"]["sunrise"])
 print(sunrise_hour, sunset_hour)
 
 time_now = datetime.now()
