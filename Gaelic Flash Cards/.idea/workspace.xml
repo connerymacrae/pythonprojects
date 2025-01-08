@@ -5,7 +5,12 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="3944fe20-9ed3-45dd-a8c0-1ebeb8c5f2b2" name="Changes" comment="flash card project complete">
-      <change afterPath="$PROJECT_DIR$/../stock_news/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api tutorial/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api tutorial/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_rain_alert/.idea/api_rain_alert.iml" beforeDir="false" afterPath="$PROJECT_DIR$/../api_rain_alert/.idea/api_rain_alert.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_rain_alert/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api_rain_alert/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../api_rain_alert/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../api_rain_alert/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../stock_news/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/../stock_news/.idea/vcs.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -93,6 +98,7 @@
       <workItem from="1729266460410" duration="3082000" />
       <workItem from="1729606275546" duration="3753000" />
       <workItem from="1731444683554" duration="29000" />
+      <workItem from="1733758722458" duration="690000" />
     </task>
     <task id="LOCAL-00001" summary="flash card project complete">
       <option name="closed" value="true" />
