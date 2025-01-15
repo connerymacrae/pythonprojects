@@ -58,7 +58,7 @@ if abs(percent_diff) >= 5:
             client = Client(account_sid, auth_token)
             message = client.messages.create(
                 from_="whatsapp:+14155238886",
-                body=f"{stock_params["symbol"]} UP by {floor(percent_diff)}% 🔺\n{article}",
+                body=f"{stock_params['symbol']} UP by {floor(percent_diff)}% 🔺\n{article}",
                 to="whatsapp:+17735805744",
             )
             # print(f"{stock_params["symbol"]} UP by {percent_diff}% 🔺\n{article}")
@@ -66,7 +66,7 @@ if abs(percent_diff) >= 5:
             client = Client(account_sid, auth_token)
             message = client.messages.create(
                 from_="whatsapp:+14155238886",
-                body=f"{stock_params["symbol"]} DOWN by {ceil(percent_diff)}% 🔻\n{article}",
+                body=f"{stock_params['symbol']} DOWN by {ceil(percent_diff)}% 🔻\n{article}",
                 to="whatsapp:+17735805744",
             )
         # print(f"{stock_params["symbol"]} DOWN by {percent_diff}% 🔻\n{article}")
