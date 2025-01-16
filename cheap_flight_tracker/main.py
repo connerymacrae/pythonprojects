@@ -47,19 +47,29 @@ SHEETY_HEADER = {"AUTHORIZATION": SHEETY_TOKEN}
 # destination = input("Where do you want to travel to?")
 # price_point = float(input("How much do you want to pay?"))
 
-destination = destinations()
 
-print(destination[1])
 
-    # location = {
-    #     "keyword": item['city'],
-    #     "max": 1,
-    #     "include": "AIRPORTS"
-    # }
-    # amadeus_response = requests.get(url=AMADEUS_IATA_CODE_ENDPOINT, params=location, headers=AMADEUS_HEADER)
-    # data = amadeus_response.json()
-    # iata_code = data["data"][0]["iataCode"]
-    # sheety_add_iata = {
-    #
-    # }
-    # sheety_response = requests.put(url=f"{SHEETY_ENDPOINT}/{item['id']}, )
+for item in destinations():
+    location = {
+        "keyword": item['city'],
+        "max": 1,
+        "include": "AIRPORTS"
+    }
+    amadeus_response = requests.get(url=AMADEUS_IATA_CODE_ENDPOINT, params=location, headers=AMADEUS_HEADER)
+    data = amadeus_response.json()
+    iata_code = data["data"][0]["iataCode"]
+    # print(f"{item['city']}, {item['id']}, {iata_code}")
+    sheety_add_iata = {
+        "sheet1": {
+            "iataCode": iata_code
+        }
+    }
+    sheety_response = requests.put(url=f"{SHEETY_ENDPOINT}/{item['id']}", json=sheety_add_iata, headers=SHEETY_HEADER)
+
+# sheety_add_iata = {
+#         "sheet1": {
+#             "iataCode": 'PDX'
+#         }
+#     }
+# sheety_response = requests.put(url=f"{SHEETY_ENDPOINT}/2", json=sheety_add_iata, headers=SHEETY_HEADER)
+# print(sheety_response.text)
