@@ -1,5 +1,7 @@
 import requests
 
+from data_manager import destinations
+
 # TODO: create list of cities to track and add to spreadsheet
 # TODO: create low price point to track
 # TODO: create function to read from spreadsheet
@@ -31,24 +33,33 @@ AMADEUS_HEADER = {
     "authorization": f"Bearer {token}"
 }
 
-AMADEUS_IATA_CODE_ENDPOINT = "https://test.api.amadeus.com/v1/reference-data/locations"
+AMADEUS_IATA_CODE_ENDPOINT = "https://test.api.amadeus.com/v1/reference-data/locations/cities"
 
-location = {
-    "subType": "AIRPORT",
-    "keyword": "london",
-    "countryCode": "GB"
-}
-response = requests.get(url=AMADEUS_IATA_CODE_ENDPOINT, params=location, headers=AMADEUS_HEADER)
 
-data = response.json()
 
-print(data)
+#
 
 
 
 SHEETY_TOKEN = "Bearer ghah^((*^DGCHDF61934764agsh&^GH78"
 SHEETY_ENDPOINT = "https://api.sheety.co/94449b7ca8b5b8936e9cc0192b70f8f5/flightDeals/sheet1"
-
+SHEETY_HEADER = {"AUTHORIZATION": SHEETY_TOKEN}
 # destination = input("Where do you want to travel to?")
-# price_point = float(input("what is your max price?"))
+# price_point = float(input("How much do you want to pay?"))
 
+destination = destinations()
+
+print(destination[1])
+
+    # location = {
+    #     "keyword": item['city'],
+    #     "max": 1,
+    #     "include": "AIRPORTS"
+    # }
+    # amadeus_response = requests.get(url=AMADEUS_IATA_CODE_ENDPOINT, params=location, headers=AMADEUS_HEADER)
+    # data = amadeus_response.json()
+    # iata_code = data["data"][0]["iataCode"]
+    # sheety_add_iata = {
+    #
+    # }
+    # sheety_response = requests.put(url=f"{SHEETY_ENDPOINT}/{item['id']}, )
