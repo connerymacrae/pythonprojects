@@ -2,10 +2,21 @@ import requests
 
 from data_manager import destinations
 
-# TODO: create function to read from spreadsheet
-# TODO: create function that compiles flight prices to each destination for a given period of time
-# TODO: compare flight prices against spreadsheet
-# TODO: If flight prices are below low price listed in spreadsheet, send notification via twilio
+#TODO: on main: run amadeus auth and get "access token"
+#TODO: on main: create amadeus header
+#TODO: on main: create SHEETY info(endpoint, auth token, header)
+
+#TODO: insert travel destination and price into SHEETY
+#TODO: create function: 1. get city from SHEETY,
+#                       2. get iata code from AMADEUS,
+#                       3. put iata code into SHEETY
+#TODO: create function: 1. get iata codes and prices from SHEETY and create list
+#                       2. create list of dates for the next six months
+#                       3. get data from AMADEUS on flights < price to city for next six months
+#                       4: create list of cheap flights
+#TODO: create function: 1. send text message if flight in list
+
+
 
 
 AMADEUS_API_KEY = "799lXNaRTryb7dApR2yg69mJFfGMLpXt"
@@ -37,8 +48,28 @@ SHEETY_TOKEN = "Bearer ghah^((*^DGCHDF61934764agsh&^GH78"
 SHEETY_ENDPOINT = "https://api.sheety.co/94449b7ca8b5b8936e9cc0192b70f8f5/flightDeals/sheet1"
 SHEETY_HEADER = {"AUTHORIZATION": SHEETY_TOKEN}
 
+q1 = input("Do you want to check flights(CHECK) or add a destination(ADD)?: ").lower()
+if q1 == "add":
+    city = input("Where to do you want to visit?: ")
+    cost = input("What's the max price you want to pay, one way?: ")
+    location = {
+        "keyword": city,
+        "max": 1,
+        "include": "AIRPORTS"
+    }
+    amadeus_response = requests.get(url=AMADEUS_IATA_CODE_ENDPOINT, params=location, headers=AMADEUS_HEADER)
+    data = amadeus_response.json()
+    iata_code = data["data"][0]["iataCode"]
+    sheety_add_row = {
+        "sheet1": {
+            "City": city,
+            "iataCode": iata_code,
+            "lowestPrice": 
+        }
+    }
 
-for item in destinations():
+
+for item in destinations(SHEETY_ENDPOINT, SHEETY_HEADER, "sheet1"):
     location = {
         "keyword": item['city'],
         "max": 1,
