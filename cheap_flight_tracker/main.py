@@ -2,13 +2,10 @@ import requests
 
 from data_manager import destinations
 
-# TODO: create list of cities to track and add to spreadsheet
-# TODO: create low price point to track
 # TODO: create function to read from spreadsheet
 # TODO: create function that compiles flight prices to each destination for a given period of time
 # TODO: compare flight prices against spreadsheet
 # TODO: If flight prices are below low price listed in spreadsheet, send notification via twilio
-
 
 
 AMADEUS_API_KEY = "799lXNaRTryb7dApR2yg69mJFfGMLpXt"
@@ -36,17 +33,9 @@ AMADEUS_HEADER = {
 AMADEUS_IATA_CODE_ENDPOINT = "https://test.api.amadeus.com/v1/reference-data/locations/cities"
 
 
-
-#
-
-
-
 SHEETY_TOKEN = "Bearer ghah^((*^DGCHDF61934764agsh&^GH78"
 SHEETY_ENDPOINT = "https://api.sheety.co/94449b7ca8b5b8936e9cc0192b70f8f5/flightDeals/sheet1"
 SHEETY_HEADER = {"AUTHORIZATION": SHEETY_TOKEN}
-# destination = input("Where do you want to travel to?")
-# price_point = float(input("How much do you want to pay?"))
-
 
 
 for item in destinations():
@@ -58,7 +47,6 @@ for item in destinations():
     amadeus_response = requests.get(url=AMADEUS_IATA_CODE_ENDPOINT, params=location, headers=AMADEUS_HEADER)
     data = amadeus_response.json()
     iata_code = data["data"][0]["iataCode"]
-    # print(f"{item['city']}, {item['id']}, {iata_code}")
     sheety_add_iata = {
         "sheet1": {
             "iataCode": iata_code
@@ -66,10 +54,5 @@ for item in destinations():
     }
     sheety_response = requests.put(url=f"{SHEETY_ENDPOINT}/{item['id']}", json=sheety_add_iata, headers=SHEETY_HEADER)
 
-# sheety_add_iata = {
-#         "sheet1": {
-#             "iataCode": 'PDX'
-#         }
-#     }
-# sheety_response = requests.put(url=f"{SHEETY_ENDPOINT}/2", json=sheety_add_iata, headers=SHEETY_HEADER)
-# print(sheety_response.text)
+# destination = input("Where do you want to travel to?")
+# price_point = float(input("How much do you want to pay?"))
