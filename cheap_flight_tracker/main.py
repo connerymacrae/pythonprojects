@@ -1,6 +1,9 @@
 import requests
-
-from data_manager import destinations
+from datetime import datetime, date, timedelta
+import os
+from dotenv import load_dotenv
+from data_manager import destinations, add_city
+from flight_search import price_check
 
 #TODO: on main: run amadeus auth and get "access token"
 #TODO: on main: create amadeus header
@@ -16,11 +19,11 @@ from data_manager import destinations
 #                       4: create list of cheap flights
 #TODO: create function: 1. send text message if flight in list
 
+load_dotenv()
 
 
-
-AMADEUS_API_KEY = "799lXNaRTryb7dApR2yg69mJFfGMLpXt"
-AMADEUS_API_SECRET= "6tGoshCcp8GDIGdw"
+AMADEUS_API_KEY = os.getenv('AMADEUS_API_KEY')
+AMADEUS_API_SECRET= os.getenv('AMADEUS_API_SECRET')
 
 AMADEUS_AUTH_TOKEN_HEADER = {
     "content-type": "application/x-www-form-urlencoded"
@@ -34,6 +37,7 @@ auth_response = requests.post(
                           data=AMADEUS_AUTH_BODY,
                           headers=AMADEUS_AUTH_TOKEN_HEADER
                               )
+
 token = auth_response.json()["access_token"]
 
 
@@ -42,48 +46,21 @@ AMADEUS_HEADER = {
 }
 
 AMADEUS_IATA_CODE_ENDPOINT = "https://test.api.amadeus.com/v1/reference-data/locations/cities"
+AMADEUS_FLIGHT_SEARCH_ENDPOINT = "https://test.api.amadeus.com/v2/shopping/flight-offers"
 
 
-SHEETY_TOKEN = "Bearer ghah^((*^DGCHDF61934764agsh&^GH78"
-SHEETY_ENDPOINT = "https://api.sheety.co/94449b7ca8b5b8936e9cc0192b70f8f5/flightDeals/sheet1"
+SHEETY_TOKEN = os.getenv("SHEETY_TOKEN")
+SHEETY_ENDPOINT = os.getenv("SHEETY_ENDPOINT")
 SHEETY_HEADER = {"AUTHORIZATION": SHEETY_TOKEN}
 
 q1 = input("Do you want to check flights(CHECK) or add a destination(ADD)?: ").lower()
 if q1 == "add":
-    city = input("Where to do you want to visit?: ")
-    cost = input("What's the max price you want to pay, one way?: ")
-    location = {
-        "keyword": city,
-        "max": 1,
-        "include": "AIRPORTS"
-    }
-    amadeus_response = requests.get(url=AMADEUS_IATA_CODE_ENDPOINT, params=location, headers=AMADEUS_HEADER)
-    data = amadeus_response.json()
-    iata_code = data["data"][0]["iataCode"]
-    sheety_add_row = {
-        "sheet1": {
-            "City": city,
-            "iataCode": iata_code,
-            "lowestPrice": 
-        }
-    }
+    add_city(AMADEUS_IATA_CODE_ENDPOINT, AMADEUS_HEADER, SHEETY_ENDPOINT, SHEETY_HEADER)
+elif q1 == "check":
+    destination_list = destinations(SHEETY_ENDPOINT, SHEETY_HEADER, "sheet1")
+    price_check(AMADEUS_FLIGHT_SEARCH_ENDPOINT, AMADEUS_HEADER, destination_list)
 
 
-for item in destinations(SHEETY_ENDPOINT, SHEETY_HEADER, "sheet1"):
-    location = {
-        "keyword": item['city'],
-        "max": 1,
-        "include": "AIRPORTS"
-    }
-    amadeus_response = requests.get(url=AMADEUS_IATA_CODE_ENDPOINT, params=location, headers=AMADEUS_HEADER)
-    data = amadeus_response.json()
-    iata_code = data["data"][0]["iataCode"]
-    sheety_add_iata = {
-        "sheet1": {
-            "iataCode": iata_code
-        }
-    }
-    sheety_response = requests.put(url=f"{SHEETY_ENDPOINT}/{item['id']}", json=sheety_add_iata, headers=SHEETY_HEADER)
 
-# destination = input("Where do you want to travel to?")
-# price_point = float(input("How much do you want to pay?"))
+
+
