@@ -14,16 +14,16 @@ flight_search = FlightSearch()
 
 ORIGIN_CITY_IATA = 'SYR'
 
-# # UPDATE AIRPORT CODES IN GOOGLE SHEET
+# UPDATE AIRPORT CODES IN GOOGLE SHEET
 
-# for row in sheet_data:
-#     if row['iataCode'] == "":
-#         row['iataCode'] = flight_search.get_destination_code(row['city'])
-#
-# '''updates sheet_data'''
-# data_manager.destination_data = sheet_data
-# '''uses put request to insert IATA code into google sheet'''
-# data_manager.update_destination_data()
+for row in sheet_data:
+    if row['iataCode'] == "":
+        row['iataCode'] = flight_search.get_destination_code(row['city'])
+
+'''updates sheet_data'''
+data_manager.destination_data = sheet_data
+'''uses put request to insert IATA code into google sheet'''
+data_manager.update_destination_data()
 
 
 
