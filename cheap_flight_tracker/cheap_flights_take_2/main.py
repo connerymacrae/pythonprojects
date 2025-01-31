@@ -1,22 +1,41 @@
+from select import select
+from datetime import datetime
 from flight_search import FlightSearch
-from pprint import pprint
 from data_manager import DataManager
+from notification_manager import NotificationManager
+
 
 
 
 data_manager = DataManager()
 sheet_data = data_manager.get_destination_data()
-# sheet_data = [{'city': 'Houston', 'iataCode': '', 'pricePoint': 150, 'id': 2},
-#               {'city': 'Minneapolis', 'iataCode': '', 'pricePoint': 150, 'id': 3},
-#               {'city': 'New York', 'iataCode': '', 'pricePoint': 100, 'id': 4},
-#               {'city': 'San Francisco', 'iataCode': '', 'pricePoint': 200, 'id': 5},
-#               {'city': 'Chicago', 'iataCode': '', 'pricePoint': 110, 'id': 6}]
 
-for row in sheet_data:
-    if row["iataCode"] == "":
-       flight_search = FlightSearch()
-       row['iataCode'] = flight_search.get_destination_code(row['city'])
-    else:
-        continue
+flight_search = FlightSearch()
 
+ORIGIN_CITY_IATA = 'SYR'
+
+# # UPDATE AIRPORT CODES IN GOOGLE SHEET
+
+# for row in sheet_data:
+#     if row['iataCode'] == "":
+#         row['iataCode'] = flight_search.get_destination_code(row['city'])
+#
+# '''updates sheet_data'''
+# data_manager.destination_data = sheet_data
+# '''uses put request to insert IATA code into google sheet'''
+# data_manager.update_destination_data()
+
+
+
+# SEARCH FOR FLIGHTS
+select_cities = []
+for city in sheet_data:
+    flights = flight_search.check_flights(ORIGIN_CITY_IATA, city['iataCode'], city['pricePoint'])
+    cheapest_flight = flight_search.check_lowest(flights)
+    select_cities.append(cheapest_flight)
+
+
+
+notification_manager = NotificationManager(sheet_data, select_cities)
+notification_manager.create_message()
 

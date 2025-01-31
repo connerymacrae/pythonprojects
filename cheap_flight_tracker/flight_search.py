@@ -64,6 +64,7 @@ def price_check(endpoint, header, sh_dict):
             if "errors" in data or "warnings" in data:
                 continue
             elif data["meta"]["count"]>0:
+                print(data)
                 print(f"Cheap {sh_dict[x][0]} flight found! Date: {day}, Price: {data['data'][0]['price']['total']}, "
                       f"carrier: {data['dictionaries']['carriers']}")
 
